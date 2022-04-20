@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
         title: Image.network('https://servicos.ulbra.br/login/0280eaf7d9f8f4d450d90e934bfbcdf4.png', height: 30),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Color(0xff2084c3),
+        backgroundColor: const Color(0xff2084c3),
       ),
       body: SingleChildScrollView(
         child: Padding(
