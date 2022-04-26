@@ -1,6 +1,7 @@
 import 'package:ap1_dsm/app/pages/home/widgets/card_aula.dart';
 import 'package:ap1_dsm/app/pages/home/widgets/drawer_widget.dart';
 import 'package:ap1_dsm/app/pages/home/widgets/drop_down_widget.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -49,17 +50,27 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
               child: DropDownWidget(),
             ),
             const SizedBox(height: 10),
             const CardAula(
+              thirthItem: 1,
               color: Colors.red,
               classNumber: '152103',
             ),
+            const SizedBox(height: 15),
             CardAula(
+              secondItem: 3,
               color: Colors.green[900],
+              classNumber: '151116',
+            ),
+            const SizedBox(height: 15),
+            const CardAula(
+              firstItem: 1,
+              thirthItem: 3,
+              color: Color(0xff2084c3),
               classNumber: '151116',
             ),
           ],
