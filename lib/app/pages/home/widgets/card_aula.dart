@@ -5,16 +5,12 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 class CardAula extends StatelessWidget {
   final Color? color;
   final String? classNumber;
-  final String? porcentagem;
-  final String? disciplina;
+  final int? firstItem;
+  final int? secondItem;
+  final int? thirthItem;
 
-  const CardAula({
-    Key? key,
-    this.color,
-    this.classNumber,
-    this.porcentagem,
-    this.disciplina,
-  }) : super(key: key);
+  const CardAula({Key? key, this.color, this.classNumber, this.firstItem, this.secondItem, this.thirthItem})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +41,7 @@ class CardAula extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '$disciplina',
+                            'Desenvolvimento de Sistemas Móveis',
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -64,7 +60,7 @@ class CardAula extends StatelessWidget {
                             lineWidth: 5.0,
                             percent: 0.15,
                             center: Text(
-                              '$porcentagem',
+                              '25',
                               style: TextStyle(color: Colors.white),
                             ),
                             progressColor: Colors.amber,
@@ -84,62 +80,64 @@ class CardAula extends StatelessWidget {
                       bottomRight: Radius.circular(5),
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconBadge(
-                            icon: const Icon(
-                              Icons.star,
-                              color: Colors.black26,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconBadge(
+                              icon: const Icon(
+                                Icons.star,
+                                color: Colors.black54,
+                              ),
+                              itemCount: firstItem ?? 0,
+                              badgeColor: Colors.red,
+                              itemColor: Colors.white,
+                              hideZero: true,
+                              onTap: () {},
                             ),
-                            itemCount: 0,
-                            badgeColor: Colors.red,
-                            itemColor: Colors.white,
-                            hideZero: true,
-                            onTap: () {},
-                          ),
-                          IconBadge(
-                            icon: const Icon(
-                              Icons.forum,
-                              color: Colors.black87,
+                            IconBadge(
+                              icon: const Icon(
+                                Icons.forum,
+                                color: Colors.black54,
+                              ),
+                              itemCount: secondItem ?? 0,
+                              badgeColor: Colors.red,
+                              itemColor: Colors.white,
+                              hideZero: true,
+                              onTap: () {},
                             ),
-                            itemCount: 1,
-                            badgeColor: Colors.red,
-                            itemColor: Colors.white,
-                            hideZero: true,
-                            onTap: () {},
-                          ),
-                          IconBadge(
-                            icon: const Icon(
-                              Icons.error,
-                              color: Colors.black26,
+                            IconBadge(
+                              icon: const Icon(
+                                Icons.error,
+                                color: Colors.black54,
+                              ),
+                              itemCount: thirthItem ?? 0,
+                              badgeColor: Colors.red,
+                              itemColor: Colors.white,
+                              hideZero: true,
+                              onTap: () {},
                             ),
-                            itemCount: 0,
-                            badgeColor: Colors.red,
-                            itemColor: Colors.white,
-                            hideZero: true,
-                            onTap: () {},
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text('Entrar na sala'),
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(double.infinity, 35),
-                            primary:
-                                Color.fromARGB(255, 53, 145, 56), // background
-                            onPrimary: Colors.white,
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: const Text('Entrar na sala'),
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(double.infinity, 35),
+                              primary: Colors.green, // background
+                              onPrimary: Colors.white,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 )
               ],

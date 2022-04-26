@@ -6,29 +6,22 @@ class DropDownWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration:  BoxDecoration(
-          
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(5),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: DropdownButton<String>(
-            
-            value:"2022/1",
-            isExpanded: true,
-            dropdownColor: Colors.white,
-            items: <String>['2022/1', '2021/2', '2021/1', '2020/2']
-                .map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
-            onChanged: (_) {},
-          ),
+        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+        width: double.infinity,
+        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(2)),
+        child: DropdownButton<String>(
+          isExpanded: true,
+          icon: const Icon(Icons.arrow_drop_down),
+          value: '2022/1',
+          items: <String>['2022/1', '2022/2', '2021/1', '2021/2'].map((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+          onChanged: (_) {},
         ),
       ),
     );
