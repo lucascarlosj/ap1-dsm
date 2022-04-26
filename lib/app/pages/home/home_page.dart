@@ -55,12 +55,16 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             const CardAula(
-              color: Colors.red,
+              color: Color.fromRGBO(161,30,33,1),
               classNumber: '152103',
+              porcentagem: "25%",
+              disciplina: "Interface Humano Computador",
             ),
-            CardAula(
-              color: Colors.green[900],
+            const CardAula(
+              color: Color.fromRGBO(5,54,30,1),
               classNumber: '151116',
+              porcentagem: "35%",
+              disciplina: "Desenvolvimento de Sistemas Móveis",
             ),
           ],
         ),

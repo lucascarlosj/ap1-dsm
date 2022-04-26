@@ -5,8 +5,16 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 class CardAula extends StatelessWidget {
   final Color? color;
   final String? classNumber;
+  final String? porcentagem;
+  final String? disciplina;
 
-  const CardAula({Key? key, this.color, this.classNumber}) : super(key: key);
+  const CardAula({
+    Key? key,
+    this.color,
+    this.classNumber,
+    this.porcentagem,
+    this.disciplina,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +43,12 @@ class CardAula extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
-                            'Desenvolvimento de Sistemas Móveis',
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                            '$disciplina',
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
                           ),
                           Text(
                             'Turma: 0077-A - 31N - Graduação',
@@ -53,8 +63,8 @@ class CardAula extends StatelessWidget {
                             radius: 35.0,
                             lineWidth: 5.0,
                             percent: 0.15,
-                            center: const Text(
-                              "15%",
+                            center: Text(
+                              '$porcentagem',
                               style: TextStyle(color: Colors.white),
                             ),
                             progressColor: Colors.amber,
@@ -123,7 +133,8 @@ class CardAula extends StatelessWidget {
                           child: const Text('Entrar na sala'),
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size(double.infinity, 35),
-                            primary: Colors.green, // background
+                            primary:
+                                Color.fromARGB(255, 53, 145, 56), // background
                             onPrimary: Colors.white,
                           ),
                         ),
@@ -155,7 +166,8 @@ class CardAula extends StatelessWidget {
                   child: Center(
                       child: Text(
                     classNumber ?? '',
-                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                        fontSize: 12, fontWeight: FontWeight.w700),
                   )),
                 ),
               ],
